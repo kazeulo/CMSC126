@@ -1,0 +1,140 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trebuchet MS";
+}
+
+body{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("pics/mountains.jpg");	
+	background-size: cover;
+}
+
+.wrap{
+	border-radius: 15px;
+	display: flex;
+	flex-direction: row;
+	width: 65%;
+	min-width: 600px;
+	margin: 3% auto;
+	box-shadow: 3px 5px 5px 4px rgba(0, 0, 0, 0.55);
+	overflow: hidden;
+}
+
+/***********time and date************/
+
+.dateAndTime{
+	background-image: url('pics/moon.jpeg');
+	background-size: cover;
+	flex: 4.5;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 45px 35px;
+	font-size: 18px;
+}
+
+
+/***********forms************/
+.formscontainer{
+	margin: auto;
+	width: inherit;
+	background-color: white;
+	max-height: 500px;
+	padding: 45px 55px;
+	overflow-y: scroll;
+	flex: 5.5;
+	font-size: 13.5px;
+}
+
+#label{
+	margin: 10px 0 1px 0;
+	font-weight: bold;
+	font-size: 12px;
+	color: #4c4c4c;
+}
+
+#studentForm{
+	display: flex;
+	flex-direction: column;
+}
+
+.course{
+	width: 100%;
+}
+
+#name, #age, #email{
+	margin-bottom: 10px;
+	height: 30px;
+	border: none;
+	border-bottom: 1.5px solid #fb0061;
+}
+
+.search{
+	width: 100%;
+	margin: 1% 0 5% 0;
+	text-align: justify;
+}
+
+#toSearch{
+	height: 30px;
+	border: none;
+	width: 65%;
+	border-bottom: 1.5px solid #fb0061; 
+}
+
+#submitBtn{
+	background-color: #fb0061;
+	color: white;
+	height: 30px;
+	width: 100%;
+	border: none;
+	border-radius: 20px;
+	margin: 20px 0;
+	width: inherit;
+}
+
+#searchBtn{
+	background-color: #fb0061;
+	color: white;
+	margin: 0 0 0 5%;
+	width: 27%;
+	height: 30px;
+	border: none;
+	border-radius: 20px;
+}
+
+#displayBtn{
+	background-color: #fb0061;
+	color: white;
+	height: 30px;
+	border: none;
+	border-radius: 20px;
+	width: 100%;
+}
+
+input:focus, textarea:focus{
+	outline: none;
+}
+
+.studentInfos{
+	font-size: 12px;
+	margin: 15px 0;
+}
+
+#submitBtn:hover, #searchBtn:hover, #displayBtn:hover{
+	background-color: white;
+	color: #fb0061;
+	border: 2px solid #fb0061;
+}
+
+#submitBtn:active, #searchBtn:active, #displayBtn:active{
+	color: black;
+	border: 2px solid black;
+}
+
+#searched{
+	margin: 20px 0px;
+}
+
+.radioinput [input:type=radio]{
+	accent-color: #fb0061;
+}

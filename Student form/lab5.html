@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Lab 5</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<div class="wrap">
+
+		<!---display current date and time---->
+		<div class="dateAndTime">
+			<p id="currentDate"></p>
+		</div>
+
+		<!---form for student inofs---->
+		<div class="formscontainer">
+			<div class="form">
+				<form id="studentForm">
+					<label id="label">Name: </label>
+					<input id="name" type="text" placeholder="Name">
+					<label id="label">Age: </label>
+					<input id="age" type="number" placeholder="Age">
+					<label id="label">Email: </label>
+					<input id="email" type="text" placeholder="Email">
+
+					<label id="label">Course:</label>
+					<!---radio buttons for selecting a course---->
+					<div class="radioInput">
+						<br><input id="course" type="radio" value="Applied Mathematics" name="course" required>
+						<label id="courseName">Applied Mathematics</label><br>
+						<input id="course" type="radio" value="Computer Science" name="course" required>
+						<label id="courseName">Computer Science</label><br>
+						<input id="course" type="radio" value="Physics" name="course" required>
+						<label id="courseName">Physics</label><br>
+						<input id="course" type="radio" value="Statistics" name="course" required>
+						<label id="courseName">Statistics</label><br>
+					</div>
+
+					<button id="submitBtn" name="submit" type="reset">Submit</button>
+				</form>
+			</div>
+
+			<!----Find student--->
+			<div class="search">
+				<form>
+					<label id="label">Find student by ID:</label><br>
+					<input id="toSearch" type="number" placeholder="Enter student ID">
+
+					<button id="searchBtn" name="search" type="reset">Search</button>
+
+					<div>
+						<pre id="searched"></pre>
+					</div>
+				</form>
+			</div>
+
+			<!----Display list of students--->
+			<div>
+				<button id="displayBtn" name="display" type="button">Display All</button>
+				<div id="display">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+	
+</body>
+
+</html>
