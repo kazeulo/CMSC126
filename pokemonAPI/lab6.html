@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Lab 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="pokemon-container" id="pokemonContainer"></div>
+
+  <script>
+
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+      .then(result => result.json())
+      .then(data => {
+        const pokemonList = data.results;
+        const pokemonContainer = document.getElementById('pokemonContainer');
+
+        pokemonList.forEach(pokemon => {
+
+          fetch(pokemon.url)
+            .then(result => result.json())
+            .then(pokemonData => {
+              const name = pokemonData.name;
+              const type = pokemonData.types[0].type.name;
+              let abilities = '';
+
+              for (let i = 0; i < pokemonData.abilities.length; i++) {
+                abilities += pokemonData.abilities[i].ability.name;
+                if (i < pokemonData.abilities.length - 1) {
+                  abilities += ', ';
+                }
+              }
+
+              const imageUrl = pokemonData.sprites.front_default;
+
+              // displaying the data
+              const pokemonCard = document.createElement('div');
+              pokemonCard.classList.add('card');
+
+              const image = document.createElement('img');
+              image.classList.add('image');
+              image.src = imageUrl;
+
+              const pokemonName = document.createElement('p');
+              pokemonName.classList.add('name');
+              pokemonName.textContent = name;
+
+              const pokemonType = document.createElement('p');
+              pokemonType.classList.add('type');
+              pokemonType.textContent = `Type: ${type}`;
+
+              const pokemonAbilities = document.createElement('p');
+              pokemonAbilities.classList.add('abilities');
+              pokemonAbilities.textContent = `Abilities: ${abilities}`;
+
+              pokemonCard.appendChild(image);
+              pokemonCard.appendChild(pokemonName);
+              pokemonCard.appendChild(pokemonType);
+              pokemonCard.appendChild(pokemonAbilities);
+
+              pokemonContainer.appendChild(pokemonCard);
+            });
+        });
+      });
+
+  </script>
+</body>
+</html>
